@@ -52,22 +52,18 @@ class AppProjectReaderServiceModel implements ArrayAccess
       */
     static $swaggerTypes = array(
         'app_name' => 'string',
-        'app_project_state' => 'int',
+        'app_project_state' => 'string',
         'creation_date' => '\DateTime',
         'credit' => 'int',
-        'has_instruction' => 'bool',
-        'has_question_options' => 'bool',
         'id_app' => 'int',
         'id_app_project' => 'int',
         'id_quality' => 'int',
         'instruction' => 'string',
         'nb_task_closed' => 'int',
         'nb_total_task' => 'int',
-        'qualities' => '\Wirk\Model\QualityReaderServiceModel[]',
         'quality_name' => 'string',
         'question_options' => 'string[]',
         'title' => 'string',
-        'title_question_options' => 'string',
         'url_notification' => 'string'
     );
   
@@ -80,19 +76,15 @@ class AppProjectReaderServiceModel implements ArrayAccess
         'app_project_state' => 'AppProjectState',
         'creation_date' => 'CreationDate',
         'credit' => 'Credit',
-        'has_instruction' => 'HasInstruction',
-        'has_question_options' => 'HasQuestionOptions',
         'id_app' => 'IdApp',
         'id_app_project' => 'IdAppProject',
         'id_quality' => 'IdQuality',
         'instruction' => 'Instruction',
         'nb_task_closed' => 'NbTaskClosed',
         'nb_total_task' => 'NbTotalTask',
-        'qualities' => 'Qualities',
         'quality_name' => 'QualityName',
         'question_options' => 'QuestionOptions',
         'title' => 'Title',
-        'title_question_options' => 'TitleQuestionOptions',
         'url_notification' => 'UrlNotification'
     );
   
@@ -105,19 +97,15 @@ class AppProjectReaderServiceModel implements ArrayAccess
         'app_project_state' => 'setAppProjectState',
         'creation_date' => 'setCreationDate',
         'credit' => 'setCredit',
-        'has_instruction' => 'setHasInstruction',
-        'has_question_options' => 'setHasQuestionOptions',
         'id_app' => 'setIdApp',
         'id_app_project' => 'setIdAppProject',
         'id_quality' => 'setIdQuality',
         'instruction' => 'setInstruction',
         'nb_task_closed' => 'setNbTaskClosed',
         'nb_total_task' => 'setNbTotalTask',
-        'qualities' => 'setQualities',
         'quality_name' => 'setQualityName',
         'question_options' => 'setQuestionOptions',
         'title' => 'setTitle',
-        'title_question_options' => 'setTitleQuestionOptions',
         'url_notification' => 'setUrlNotification'
     );
   
@@ -130,19 +118,15 @@ class AppProjectReaderServiceModel implements ArrayAccess
         'app_project_state' => 'getAppProjectState',
         'creation_date' => 'getCreationDate',
         'credit' => 'getCredit',
-        'has_instruction' => 'getHasInstruction',
-        'has_question_options' => 'getHasQuestionOptions',
         'id_app' => 'getIdApp',
         'id_app_project' => 'getIdAppProject',
         'id_quality' => 'getIdQuality',
         'instruction' => 'getInstruction',
         'nb_task_closed' => 'getNbTaskClosed',
         'nb_total_task' => 'getNbTotalTask',
-        'qualities' => 'getQualities',
         'quality_name' => 'getQualityName',
         'question_options' => 'getQuestionOptions',
         'title' => 'getTitle',
-        'title_question_options' => 'getTitleQuestionOptions',
         'url_notification' => 'getUrlNotification'
     );
   
@@ -155,7 +139,7 @@ class AppProjectReaderServiceModel implements ArrayAccess
     
     /**
       * $app_project_state 
-      * @var int
+      * @var string
       */
     protected $app_project_state;
     
@@ -170,18 +154,6 @@ class AppProjectReaderServiceModel implements ArrayAccess
       * @var int
       */
     protected $credit;
-    
-    /**
-      * $has_instruction 
-      * @var bool
-      */
-    protected $has_instruction;
-    
-    /**
-      * $has_question_options 
-      * @var bool
-      */
-    protected $has_question_options;
     
     /**
       * $id_app 
@@ -220,12 +192,6 @@ class AppProjectReaderServiceModel implements ArrayAccess
     protected $nb_total_task;
     
     /**
-      * $qualities 
-      * @var \Wirk\Model\QualityReaderServiceModel[]
-      */
-    protected $qualities;
-    
-    /**
       * $quality_name 
       * @var string
       */
@@ -242,12 +208,6 @@ class AppProjectReaderServiceModel implements ArrayAccess
       * @var string
       */
     protected $title;
-    
-    /**
-      * $title_question_options 
-      * @var string
-      */
-    protected $title_question_options;
     
     /**
       * $url_notification 
@@ -267,19 +227,15 @@ class AppProjectReaderServiceModel implements ArrayAccess
             $this->app_project_state = $data["app_project_state"];
             $this->creation_date = $data["creation_date"];
             $this->credit = $data["credit"];
-            $this->has_instruction = $data["has_instruction"];
-            $this->has_question_options = $data["has_question_options"];
             $this->id_app = $data["id_app"];
             $this->id_app_project = $data["id_app_project"];
             $this->id_quality = $data["id_quality"];
             $this->instruction = $data["instruction"];
             $this->nb_task_closed = $data["nb_task_closed"];
             $this->nb_total_task = $data["nb_total_task"];
-            $this->qualities = $data["qualities"];
             $this->quality_name = $data["quality_name"];
             $this->question_options = $data["question_options"];
             $this->title = $data["title"];
-            $this->title_question_options = $data["title_question_options"];
             $this->url_notification = $data["url_notification"];
         }
     }
@@ -307,7 +263,7 @@ class AppProjectReaderServiceModel implements ArrayAccess
     
     /**
      * Gets app_project_state
-     * @return int
+     * @return string
      */
     public function getAppProjectState()
     {
@@ -316,7 +272,7 @@ class AppProjectReaderServiceModel implements ArrayAccess
   
     /**
      * Sets app_project_state
-     * @param int $app_project_state 
+     * @param string $app_project_state 
      * @return $this
      */
     public function setAppProjectState($app_project_state)
@@ -365,48 +321,6 @@ class AppProjectReaderServiceModel implements ArrayAccess
     {
         
         $this->credit = $credit;
-        return $this;
-    }
-    
-    /**
-     * Gets has_instruction
-     * @return bool
-     */
-    public function getHasInstruction()
-    {
-        return $this->has_instruction;
-    }
-  
-    /**
-     * Sets has_instruction
-     * @param bool $has_instruction 
-     * @return $this
-     */
-    public function setHasInstruction($has_instruction)
-    {
-        
-        $this->has_instruction = $has_instruction;
-        return $this;
-    }
-    
-    /**
-     * Gets has_question_options
-     * @return bool
-     */
-    public function getHasQuestionOptions()
-    {
-        return $this->has_question_options;
-    }
-  
-    /**
-     * Sets has_question_options
-     * @param bool $has_question_options 
-     * @return $this
-     */
-    public function setHasQuestionOptions($has_question_options)
-    {
-        
-        $this->has_question_options = $has_question_options;
         return $this;
     }
     
@@ -537,27 +451,6 @@ class AppProjectReaderServiceModel implements ArrayAccess
     }
     
     /**
-     * Gets qualities
-     * @return \Wirk\Model\QualityReaderServiceModel[]
-     */
-    public function getQualities()
-    {
-        return $this->qualities;
-    }
-  
-    /**
-     * Sets qualities
-     * @param \Wirk\Model\QualityReaderServiceModel[] $qualities 
-     * @return $this
-     */
-    public function setQualities($qualities)
-    {
-        
-        $this->qualities = $qualities;
-        return $this;
-    }
-    
-    /**
      * Gets quality_name
      * @return string
      */
@@ -617,27 +510,6 @@ class AppProjectReaderServiceModel implements ArrayAccess
     {
         
         $this->title = $title;
-        return $this;
-    }
-    
-    /**
-     * Gets title_question_options
-     * @return string
-     */
-    public function getTitleQuestionOptions()
-    {
-        return $this->title_question_options;
-    }
-  
-    /**
-     * Sets title_question_options
-     * @param string $title_question_options 
-     * @return $this
-     */
-    public function setTitleQuestionOptions($title_question_options)
-    {
-        
-        $this->title_question_options = $title_question_options;
         return $this;
     }
     

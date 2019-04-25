@@ -66,16 +66,6 @@ class TaskLineApiTest extends \PHPUnit_Framework_TestCase
 
     
     /**
-     * Test case for post
-     *
-     * 
-     *
-     */
-    public function test_post() {
-
-    }
-    
-    /**
      * Test case for get
      *
      * 
